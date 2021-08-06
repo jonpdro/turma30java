@@ -5,38 +5,30 @@ import java.util.Scanner;
 public class CadAluno {
 
 	public static void main(String[] args) {
-
 		Scanner leia = new Scanner(System.in);
-		String alunes[] = { "Ana Beatriz Y. Espejo", "Ana Carolina G. Souza", "Ana Paula Souza Dias",
-				"Anderson Coelho Costa", "Andrei Felipe C. Souza", "Ariel B. Pirangy Soares",
-				"Beatriz S. Teixeira", "Beatriz Gomes de Abreu", "Caio Saldanha Motta",
-				"Cássia de A. N. Santos", "Emerson Silva Santana", "Enzo Fulaneto\t", "Ester G. N. Nascimento",
-				"Fábio Campaner Suzuki", "Felipe Matos de Lima", "Felipe Souza da Silva", "Flávio Augusto da Costa",
-				"Giovanna S. P. Penedos", "Gustavo M. Ferreira", "Henrique Uriel Lopes",
-				"João Pedro Cruz Gomes", "José P. M. F. Neto", "Letícia Porto Martins", "Lucas S. N. Aguiar",
-				"Maicon Gomes Cerqueira", "Marcos Vinicius C. Rego", "Matheus Araujo Farina",
-				"Matheus de Brito Milani", "Natália R. S. Rocha", "Pamela Paulino\t", "Renata S. Ferreira",
-				"Rodrigo R. L. Costa", "Sabrina Alves de Paiva", "Sergio de Jesus Severo",
-				"Stefani F. P. Tosi", "Talita g. m. g. Lima ", "Thiago da Silva Machado", "Vinícios L. Silva",
-				"Vinicius C. Silva"};
-		int notas[] = new int[alunes.length], auxNotas; // Mat - 0x
-		String matriculas[] = new String[alunes.length];
-		boolean ativo[] = new boolean[alunes.length]; // true
-		String auxMat;
+
+		String[] alunes = { "Ana Beatriz Yujra Espejo", "Ana Carolina G. de Souza", "Ana Paula Souza Dias",
+				"Anderson Coelho da Costa", "Andrei Felipe C. de Souza", "Ariel B. Pirangy Soares",
+				"Beatriz dos Santos Teixeira", "Beatriz Gomes de Abreu", "Caio Saldanha Motta     ",
+				"Cássia de Arruda N. Santos", "Emerson da Silva Santana", "Enzo Fulaneto          ",
+				"Ester Gomes N. Nascimento", "Fábio Campaner Suzuki", "Felipe Matos de Lima",
+				"Felipe Souza da Silva", "Flávio Augusto da Costa", "Giovanna S. P. Penedos",
+				"Gustavo Mesquita Ferreira", "Henrique Uriel Lopes", "João Pedro Cruz Gomes",
+				"José Paulo de Matos F. Neto", "Letícia Porto Martins", "Lucas Silva Nunes de Aguiar",
+				"Maicon Gomes Cerqueira", "Marcos Vinicius C. Rego", "Matheus de Araujo Farina",
+				"Matheus de Brito Milani", "Natália Regina S. Rocha", "Pamela Paulino          ",
+				"Renata dos Santos Ferreira", "Rodrigo Roseo L. Costa", "Sabrina Alves de Paiva",
+				"Sergio de Jesus Severo", "Stefani Fernanda P. Tosi",
+				"Talita Gleice M. G. S. Lima", "Thiago da Silva Machado", "Vinícios Lisboa da Silva",
+				"Vinicius C. S. Francisco" };
+		int[] notas = new int[alunes.length];
+		int novaNota;
+		String[] matriculas = new String[alunes.length]; // MAT-0X
+		String matriculaEscolhida;
+		boolean[] ativo = new boolean[alunes.length];
 		char resposta;
-		char status;
-		// mostra todo mundo
-		// laço e pede:
-		// pedi pela matricula 1 aluno
-		// informar a nota deste aluno
-		// vai informar se o aluno ainda continua ativo ou não [o usuario não pode
-		// digitar verdadeiro ou falso
-		// tem que fazer o processo até que pergunta continuar sim ou não seja não
-		// após mostrar todos os alunos com nota pela regra
-		// até 5 - estude mais
-		// acima de 5 - otimo, continue assim
-		// aluno inativo ou aluno ativo no true ou falso de ativo
-		// apenas dos alunos que tem nota
+		String atividadeAlune;
+
 		for (int x = 0; x < alunes.length; x++) {
 			ativo[x] = true;
 			if (x >= 9) {
@@ -44,52 +36,56 @@ public class CadAluno {
 			} else {
 				matriculas[x] = "MAT-0" + (x + 1);
 			}
+
 		}
-		System.out.println("MATRICULA\tALUNES\t\t\t\tNOTAS\tSTATUS");
+		System.out.println("MATRICULA   ALUNO\t\t\t NOTA\tSTATUS");
 		for (int x = 0; x < alunes.length; x++) {
-			if (ativo[x] == true) {
-				System.out.println(matriculas[x] + "\t\t" + alunes[x] + "\t\t  " + notas[x] + "\tAtivo");
+			if(ativo[x] == true) {
+				System.out.println(matriculas[x] +"\t    "+ alunes[x] + "\t   " + notas[x] + "\tAtivo");
 			}
 		}
-
+		System.out.println();
+		
 		do {
-			System.out.print("\nDIGITE A MATRICULA DO ALUNE: ");
-			auxMat = leia.next().toUpperCase();
+			System.out.print("DIGITE A MATRICULA DO ALUNE: ");
+			matriculaEscolhida = leia.next().toUpperCase();
+			
 			for (int x = 0; x < alunes.length; x++) {
-				if (auxMat.equals(matriculas[x])) {
-					System.out.println("MATRICULA\tALUNES\t\t\t\tNOTAS\tSTATUS");
-					System.out.println(matriculas[x] + "\t\t" + alunes[x] + "\t\t  " + notas[x] + "\tAtivo");
-					System.out.print("\nINSIRA A NOTA: ");
-					auxNotas = leia.nextInt();
-					notas[x] = auxNotas;
-					if (notas[x] <= 5) {
-						System.out.println("VOCÊ PODE MELHORAR, ESTUDE MAIS!");
-					} else {
-						System.out.println("ÓTIMO, CONTINUE ESTUDANDO. :)");
-					}
-					System.out.println("QUAL É O STATUS DO ALUNE? (A/I): ");
-					status = leia.next().toUpperCase().charAt(0);
-					if (status == 'A') {
+				if (matriculaEscolhida.equals(matriculas[x])) {
+					System.out.println("MATRICULA   ALUNO\t\t\t NOTA\tSTATUS");
+					System.out.println(matriculas[x] +"\t    "+ alunes[x] + "\t   " + notas[x] + "\tAtivo");
+					System.out.print("\nDIGITE A NOTA DO ALUNE: ");
+					novaNota = leia.nextInt();
+					notas[x] = novaNota;
+
+					System.out.println("QUAL O STATUS DO ALUNE [ATIVO/ INATIVO]: ");
+					atividadeAlune = leia.next().toUpperCase();
+
+					if (atividadeAlune.equals("ATIVO")) {
 						ativo[x] = true;
-					} else if (status == 'I') {
+						
+					} else if (atividadeAlune.equals("INATIVO")) {
 						ativo[x] = false;
+						
 					} else {
-						System.out.println("ESCOLHA INVÁLIDA, NÃO SERÁ ALTERADO O STATUS.");
+						System.out.println("STATUS INVÁLIDO, SITUAÇÃO PERMANECE A MESMA!");
 					}
+
 				}
 			}
-
-			System.out.print("DESEJA CONTINUAR? (S/N): ");
+			System.out.print("Continuar? [S/N]: ");
 			resposta = leia.next().toUpperCase().charAt(0);
-
+			
 		} while (resposta == 'S');
 
-		System.out.println("MATRICULA\tALUNES\t\t\t\tNOTAS\tSTATUS");
 		for (int x = 0; x < alunes.length; x++) {
-			if (ativo[x] == true) {
-				System.out.println(matriculas[x] + "\t\t" + alunes[x] + "\t\t  " + notas[x] + "\tAtivo");
+			if (notas[x] <= 5) {
+				System.out.println("Estude mais");
+			} else if (notas[x] > 5) {
+				System.out.println("ótimo, continue assim!");
 			}
 		}
+
 	}
 
 }
