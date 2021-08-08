@@ -46,8 +46,8 @@ public class JoiasCode {
 		}
 
 		linha();
-		System.out.println("\nDeseja Fazer Compras? ");
-		System.out.println("\nDigite 'S' Para Sim e 'N' Para Não ");
+		System.out.println("\nDESEJA FAZER COMPRAS? ");
+		System.out.print("\n(DIGITE 'S' PARA SIM E 'N' PARA NÃO): ");
 		op = leia.next().toUpperCase().charAt(0);
 		linha();
 
@@ -56,12 +56,12 @@ public class JoiasCode {
 			// COMEÇO DA PRIMEIRA FUNÇÃO DE FAZER COMPRAS
 
 			do {
-				System.out.println("\nDigite o Código do Produto");
+				System.out.print("\nDIGITE O CÓDIGO DO PRODUTO: ");
 				auxCod = leia.next().toUpperCase();
 
 				for (int x = 0; x < 10; x++) {
 					if (auxCod.equals(codigo[x])) {
-						System.out.println("INFORME A QUANTIDADE QUE DESEJA: ");
+						System.out.print("INFORME A QUANTIDADE QUE DESEJA: ");
 						contEstoque[x] = leia.nextInt();
 						auxQntd[x] += contEstoque[x];
 
@@ -101,14 +101,14 @@ public class JoiasCode {
 							&& auxCod.equals("G7-05") == false && auxCod.equals("G7-06") == false
 							&& auxCod.equals("G7-07") == false && auxCod.equals("G7-08") == false
 							&& auxCod.equals("G7-09") == false && auxCod.equals("G7-010") == false) {
-						System.out.println("Código invalido!");
+						System.out.println("CÓDIGO INVÁLIDO!");
 						break;
 					}
 
 				}
 				// FUNÇÃO DE CONTINUAR COMPRANDO
 				System.out.println("\nDESEJA CONTINUAR COMPRANDO?");
-				System.out.println("\nDIGITE 'S' PARA SIM E 'N' PARA NÃO: ");
+				System.out.print("\nDIGITE 'S' PARA SIM E 'N' PARA NÃO: ");
 				op = leia.next().toUpperCase().charAt(0);
 				linha();
 
@@ -143,7 +143,7 @@ public class JoiasCode {
 
 				while (op2 == 'S') {
 
-					System.out.println("\nDigite o Código do Produto");
+					System.out.print("\nDIGITE O CÓDIGO DO PRODUTO: ");
 					auxCod = leia.next().toUpperCase();
 
 					for (int x = 0; x < 10; x++) {
@@ -269,7 +269,7 @@ public class JoiasCode {
 					System.out.print("\n\t\t      \n");
 					nome();
 					linha();
-					System.out.println("\t\t Até breve !!");
+					System.out.println("\t\t ATÉ BREVE !!");
 				}
 
 			}
@@ -280,10 +280,10 @@ public class JoiasCode {
 			System.out.print("\n\t\t      \n");
 			nome();
 			linha();
-			System.out.println("\t\t Até breve!!");
+			System.out.println("\t\t ATÉ BREVE!!");
 
 		} else {
-			System.out.println("Opção Invalida");
+			System.out.println("OPÇÃO INVÁLIDA");
 
 		}
 
