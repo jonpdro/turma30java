@@ -2,7 +2,7 @@ package applications;
 
 import java.util.Scanner;
 
-import classes.Pessoa;
+import entidades.Pessoa;
 
 public class ListaBalada {
 
