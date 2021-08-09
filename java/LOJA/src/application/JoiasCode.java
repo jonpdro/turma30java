@@ -1,5 +1,6 @@
 package application;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class JoiasCode {
@@ -7,6 +8,7 @@ public class JoiasCode {
 
 		// SCANNER
 		Scanner leia = new Scanner(System.in);
+		DecimalFormat df = new DecimalFormat("#.00");
 
 		// VARIÁVEIS
 		final int TAM = 10;
@@ -46,7 +48,7 @@ public class JoiasCode {
 		}
 
 		linha();
-		System.out.println("\nDESEJA FAZER COMPRAS? ");
+		System.out.println("DESEJA FAZER COMPRAS? ");
 		System.out.print("\n(DIGITE 'S' PARA SIM E 'N' PARA NÃO): ");
 		op = leia.next().toUpperCase().charAt(0);
 		linha();
@@ -86,7 +88,7 @@ public class JoiasCode {
 							for (x = 0; x < 10; x++) {
 								if (auxQntd[x] > 0) {
 									System.out.print("\n " + codigo[x] + "\t     " + produto[x] + "\t  R$"
-											+ Math.ceil(valorCompra[x]) + "\t    " + auxQntd[x]);
+											+ df.format(valorCompra[x]) + "\t    " + auxQntd[x]);
 								}
 							}
 
@@ -107,7 +109,7 @@ public class JoiasCode {
 
 				}
 				// FUNÇÃO DE CONTINUAR COMPRANDO
-				System.out.println("\nDESEJA CONTINUAR COMPRANDO?");
+				System.out.println("DESEJA CONTINUAR COMPRANDO?");
 				System.out.print("\nDIGITE 'S' PARA SIM E 'N' PARA NÃO: ");
 				op = leia.next().toUpperCase().charAt(0);
 				linha();
@@ -133,7 +135,7 @@ public class JoiasCode {
 				for (int x = 0; x < 10; x++) {
 					if (auxQntd[x] > 0) {
 						System.out.print("\n " + codigo[x] + "\t     " + produto[x] + "\t  R$"
-								+ Math.ceil(valorCompra[x]) + "\t    " + auxQntd[x]);
+								+ df.format(valorCompra[x]) + "\t    " + auxQntd[x]);
 					}
 				}
 
@@ -163,7 +165,7 @@ public class JoiasCode {
 					for (int x = 0; x < 10; x++) {
 						if (auxQntd[x] > 0) {
 							System.out.print("\n " + codigo[x] + "\t     " + produto[x] + "\t  R$"
-									+ Math.ceil(valorCompra[x]) + "\t    " + auxQntd[x]);
+									+ df.format(valorCompra[x]) + "\t    " + auxQntd[x]);
 						}
 					}
 
@@ -185,7 +187,7 @@ public class JoiasCode {
 					for (int y = 0; y < 10; y++) {
 						if (auxQntd[y] > 0) {
 							System.out.print("\n " + codigo[y] + "\t     " + produto[y] + "\t  R$"
-									+ Math.ceil(valorCompra[y]) + "\t    " + auxQntd[y]);
+									+ df.format(valorCompra[y]) + "\t    " + auxQntd[y]);
 						}
 
 					}
@@ -210,9 +212,9 @@ public class JoiasCode {
 							linha();
 							contador2 = contador * 0.9;
 							System.out.print("\n\t\t   ✧ NOTA FISCAL ✧\n\n");
-							System.out.print("\t\t\n VALOR TOTAL: R$ " + Math.round(contador2) + ",00");
+							System.out.print("\t\t\n VALOR TOTAL: R$ " + df.format(contador2));
 							contador2 = contador * 0.09;
-							System.out.print("\t\t\n 9% DE IMPOSTOS: R$ " + Math.round(contador2) + ",00");
+							System.out.print("\t\t\n 9% DE IMPOSTOS: R$ " + df.format(contador2));
 							linha();
 							break;
 
@@ -222,9 +224,9 @@ public class JoiasCode {
 							linha();
 							contador2 = contador * 1.1;
 							System.out.print("\n\t\t   ✧ NOTA FISCAL ✧\n\n");
-							System.out.print("\t\t\n VALOR TOTAL: R$ " + Math.round(contador2) + ",00");
+							System.out.print("\t\t\n VALOR TOTAL: R$ " + df.format(contador2));
 							contador2 = contador * 0.09;
-							System.out.print("\t\t\n 9% DE IMPOSTOS: R$ " + Math.round(contador2) + ",00");
+							System.out.print("\t\t\n 9% DE IMPOSTOS: R$ " + df.format(contador2));
 							linha();
 							break;
 
@@ -235,9 +237,9 @@ public class JoiasCode {
 							contador = (contador * 1.15) / 2;
 							System.out.print("\n\t\t   ✧ NOTA FISCAL ✧\n\n");
 							System.out.print("\n\tPARCELADO EM 2X | 15% DE ACRÉSCIMO\n");
-							System.out.print("\tVALOR TOTAL DE CADA PARCELA: R$ " + Math.round(contador) + ",00");
+							System.out.print("\tVALOR TOTAL DE CADA PARCELA: R$ " + df.format(contador));
 							contador2 = contador * 0.09;
-							System.out.print("\n\t 9% DE IMPOSTOS: R$ " + Math.round(contador2) + ",00");
+							System.out.print("\n\t 9% DE IMPOSTOS: R$ " + df.format(contador2));
 							linha();
 							break;
 
