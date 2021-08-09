@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class JoiasCode {
 	public static void main(String[] args) {
 
-		// SCANNER
+		// FUNÇÕES - BIBLIOTECAS
 		Scanner leia = new Scanner(System.in);
 		DecimalFormat df = new DecimalFormat("#.00");
 
