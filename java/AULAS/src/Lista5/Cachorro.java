@@ -1,11 +1,11 @@
 package Lista5;
 
-public class cachorro extends animal {
+public class Cachorro extends Animal {
 
 	private String nome;
 	private int idade;
 
-	public cachorro(String raca, String andar, String ossos, String nome, int idade) {
+	public Cachorro(String raca, String andar, String ossos, String nome, int idade) {
 		super(raca, andar, ossos);
 		this.nome = nome;
 		this.idade = idade;
@@ -27,4 +27,8 @@ public class cachorro extends animal {
 		this.idade = idade;
 	}
 
+	@Override
+	public void emitirSom() {
+		System.out.println("Emitindo o som do animal...");
+	}
 }

@@ -1,12 +1,12 @@
 package Lista5;
 
-public class animal {
+public class Animal {
 
 	private String raca;
 	private String ossos;
 	private String andar;
 
-	public animal(String raca, String andar, String ossos) {
+	public Animal(String raca, String andar, String ossos) {
 		super();
 		this.raca = raca;
 		this.andar = andar;
@@ -35,6 +35,10 @@ public class animal {
 
 	public void setAndar(String andar) {
 		this.andar = andar;
+	}
+	
+	public void emitirSom() {
+		System.out.println("Emitindo o som do animal...");
 	}
 
 }

@@ -1,10 +1,10 @@
 package Lista5;
 
-public class preguica extends animal {
+public class Preguica extends Animal {
 	private String nome;
 	private int idade;
 
-	public preguica(String raca, String andar, String ossos, String nome, int idade) {
+	public Preguica(String raca, String andar, String ossos, String nome, int idade) {
 		super(raca, andar, ossos);
 		this.nome = nome;
 		this.idade = idade;
@@ -26,4 +26,8 @@ public class preguica extends animal {
 		this.idade = idade;
 	}
 
+	@Override
+	public void emitirSom() {
+		System.out.println("Emitindo o som do animal...");
+	}
 }
