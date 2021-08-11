@@ -1,20 +1,33 @@
 package programas;
 
-import entities.produto;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CadProduto {
 
 	public static void main(String[] args) {
 		
-		produto prod1 = new produto("G7-01", "PULSEIRA ICY", 70.99, 10);
+		int i=1;
+		List<String> cadastro = new ArrayList<>();
 		
-		System.out.println(prod1.getEstoque());
+		cadastro.add("santos");
+		cadastro.add("parmeira");
+		cadastro.add("curintia");
+		cadastro.add("psg");
+		cadastro.add("spfc");
 		
-		prod1.retirarEstoque(15);
-		System.out.println(prod1.getEstoque());
+		System.out.println("TAMANHO: "+ cadastro.size());
 		
-		prod1.incluirEstoque(10);
-		System.out.println(prod1.getEstoque());
+		cadastro.add(4, "juventus");
+
+		for(String time:cadastro) {
+			System.out.println(i + " - " + time);
+			i++;
+		}
+		System.out.println("TAMANHO: "+ cadastro.size());
+		
+		System.out.println(cadastro.get(4));
+		
 	}
 
 }
