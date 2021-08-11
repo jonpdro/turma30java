@@ -1,6 +1,6 @@
 package programas;
 
-import entidades.produto;
+import entities.produto;
 
 public class CadProduto {
 
