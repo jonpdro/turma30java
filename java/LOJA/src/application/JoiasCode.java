@@ -94,10 +94,6 @@ public class JoiasCode {
 
 						}
 					}
-					/*
-					 * if (auxCod != "G7-01" && auxCod != "G7-02" && auxCod != "G7-03") {
-					 * System.out.println("Código invalido!"); break; }
-					 */
 					if (auxCod.equals("G7-01") == false && auxCod.equals("G7-02") == false
 							&& auxCod.equals("G7-03") == false && auxCod.equals("G7-04") == false
 							&& auxCod.equals("G7-05") == false && auxCod.equals("G7-06") == false
