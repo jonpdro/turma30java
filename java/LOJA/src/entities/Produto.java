@@ -1,43 +1,29 @@
 package entities;
 
-public abstract class Produto {
+public class Produto {
 
+	// Atributos
 	private String codigo;
 	private String nome;
 	private double valor;
 	private int estoque;
 
-	public Produto(String codigo, String nome) {
-		this.codigo = codigo;
-		this.nome = nome;
-	}
-
+	// Construtores
 	public Produto(String codigo, String nome, double valor, int estoque) {
 		super();
 		this.codigo = codigo;
-		this.nome = nome;
 		this.valor = valor;
-		if (estoque < 0) {
-			this.estoque = 0;
-		} else {
-			this.estoque = estoque;
-		}
+		this.estoque = estoque;
+		this.nome = nome;
 	}
 
+	// Encapsuladores
 	public String getCodigo() {
 		return codigo;
 	}
 
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
 	}
 
 	public double getValor() {
@@ -52,17 +38,30 @@ public abstract class Produto {
 		return estoque;
 	}
 
+	public void setEstoque(int estoque) {
+		this.estoque = estoque;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	// Métodos
 	public void retirarEstoque(int qntd) {
 		if (qntd > estoque) {
-			System.out.println("ROLA NAO");
+			System.out.println("VAI DÁ NAO");
 		} else {
 			this.estoque -= qntd;
 		}
 	}
-
-	public void incluirEstoque(int qntd) {
-		if (qntd < estoque) {
-			System.out.println("ROLA NAO");
+	
+	public void modificaEstoque(int qntd) {
+		if (qntd > estoque) {
+			System.out.println("VAI DÁ NAO");
 		} else {
 			this.estoque += qntd;
 		}

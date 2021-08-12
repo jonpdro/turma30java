@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import entities.Produto;
 
-public class JoiasCode {
+public class JoiasCodePOO2 {
 
 	public static void main(String[] args) {
 
@@ -64,7 +64,6 @@ public class JoiasCode {
 		linha();
 		System.out.print("CÓDIGO\t        PRODUTO\t\t  PREÇO\t    ESTOQUE");
 		for (Produto produto : produtos) {
-			produto.tabela();
 		}
 
 		linha();
@@ -133,7 +132,6 @@ public class JoiasCode {
 					linha();
 					System.out.print("CÓDIGO\t        PRODUTO\t\t  PREÇO\t    ESTOQUE");
 					for (Produto produto : produtos) {
-						produto.tabela();
 					}
 				}
 

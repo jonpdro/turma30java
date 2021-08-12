@@ -3,7 +3,7 @@ package application;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class JoiasCode {
+public class JoiasCodeProcedural {
 	public static void main(String[] args) {
 
 		// FUNÇÕES - BIBLIOTECAS
