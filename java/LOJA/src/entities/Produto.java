@@ -17,6 +17,12 @@ public class Produto {
 		this.nome = nome;
 	}
 
+	public Produto(String codigo, int estoque) {
+		super();
+		this.codigo = codigo;
+		this.estoque = estoque;
+	}
+
 	// Encapsuladores
 	public String getCodigo() {
 		return codigo;
@@ -59,7 +65,8 @@ public class Produto {
 		}
 	}
 	
-	public void modificaEstoque(int qntd) {
+
+	public void adicionaEstoque(int qntd) {
 		if (qntd > estoque) {
 			System.out.println("VAI DÁ NAO");
 		} else {

@@ -160,7 +160,7 @@ public class JoiasCodePOO2 {
 							auxQntd[x] = 0;
 							System.out.print("\nINFORME A QUANTIDADE QUE DESEJA RETIRAR DO PRODUTO: ");
 							auxQntd[x] = leia.nextInt();
-							produtos[x].modificaEstoque(auxQntd[x]);
+						//	produtos[x].modificarEstoque(auxQntd[x]);
 						}
 					}
 
