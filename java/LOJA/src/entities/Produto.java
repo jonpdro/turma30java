@@ -1,6 +1,9 @@
 package entities;
 
+import java.text.DecimalFormat;
+
 public class Produto {
+	DecimalFormat df = new DecimalFormat("#.00");
 
 	// Atributos
 	private String codigo;
@@ -17,9 +20,12 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	public Produto(String codigo, int estoque) {
+	public Produto() {
 		super();
-		this.codigo = codigo;
+	}
+
+	public Produto(int estoque) {
+		super();
 		this.estoque = estoque;
 	}
 
@@ -64,13 +70,48 @@ public class Produto {
 			this.estoque -= qntd;
 		}
 	}
-	
 
-	public void adicionaEstoque(int qntd) {
+	public void adicionarEstoque(int qntd) {
 		if (qntd > estoque) {
 			System.out.println("VAI DÁ NAO");
 		} else {
 			this.estoque += qntd;
 		}
 	}
+
+	public void pagamentos(int pagamento, double valorTotal) {
+
+		double imposto = valorTotal;
+
+		switch (pagamento) {
+		case 1:
+			valorTotal = valorTotal * 0.9;
+			System.out.print("\n\t\t   ✧ NOTA FISCAL ✧\n\n");
+			System.out.print("\t\t\nVALOR TOTAL: R$ " + df.format(valorTotal));
+			imposto = valorTotal * 0.09;
+			System.out.print("\t\t\n9% DE IMPOSTOS: R$ " + df.format(imposto));
+			break;
+
+		case 2:
+			valorTotal = valorTotal * 1.1;
+			System.out.print("\n\t\t   ✧ NOTA FISCAL ✧\n\n");
+			System.out.print("\t\t\nVALOR TOTAL: R$ " + df.format(valorTotal));
+			imposto = valorTotal * 0.09;
+			System.out.print("\t\t\n9% DE IMPOSTOS: R$ " + df.format(imposto));
+			break;
+
+		case 3:
+			valorTotal = (valorTotal * 1.15) / 2;
+			System.out.print("\n\t\t   ✧ NOTA FISCAL ✧\n\n");
+			System.out.print("\n\tPARCELADO EM 2X | 15% DE ACRÉSCIMO\n");
+			System.out.print("\t\t\nVALOR TOTAL DE CADA PARCELA: R$ " + df.format(valorTotal));
+			imposto = valorTotal * 0.09;
+			System.out.print("\t\t\n9% DE IMPOSTOS: R$ " + df.format(imposto));
+			break;
+
+		default:
+			break;
+		}
+	}
+
 }
