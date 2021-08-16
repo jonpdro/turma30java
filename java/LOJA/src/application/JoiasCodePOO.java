@@ -210,8 +210,8 @@ public class JoiasCodePOO {
 	public static void nome() {
 		System.out.print("\t    ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆\n");
 		System.out.print("\t    ☆   ╔════════════════════╗	  ☆\n");
-		System.out.print("\t    ☆    ❝    JÓIAS CODE     ❞	  ☆\n"); // GAMBIARRA!!!!!!!!!!!!!!
-		System.out.print("\t    ☆   ╚════════════════════╝	  ☆\n"); // NÃO MEXER!!!!!!!!!!!!!!!!
+		System.out.print("\t    ☆    ❝    JÓIAS CODE     ❞	  ☆\n"); 
+		System.out.print("\t    ☆   ╚════════════════════╝	  ☆\n"); 
 		System.out.print("\t    ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆\n");
 		System.out.print("\n\t   ✧ TRAZENDO SEU BRILHO INTERIOR ✧");
 		linha();

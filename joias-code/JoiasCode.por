@@ -212,7 +212,7 @@ programa
 				{
 					// FINALIZAÇÃO DAS COMPRAS
 					linha()
-					escreva("\t   VALOR TOTAL DA COMPRA: R$", contador)
+					escreva("\t   VALOR TOTAL DA COMPRA: R$", mat.arredondar(contador, 2))
 					linha()
 					escreva("\t\tFORMA DE PAGAMENTOS:\n\n")
 					escreva(" OPÇÃO 1 - A VISTA COM 10% DESCONTO\n")
@@ -276,7 +276,7 @@ programa
 					}enquanto(pagamento >= 3)
 				}
 				// EXIBIÇÃO DOS PRODUTOS E CARRINHO APÓS FINALIZAR AS COMPRAS
-				escreva("\t          RELAÇÃO DE PRODUTOS")
+				escreva("\n\t          RELAÇÃO DE PRODUTOS")
 				linha()
 				escreva("CÓDIGO\t        PRODUTO\t\t   PREÇO\t  ESTOQUE\n")
 				
@@ -352,7 +352,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 6235; 
+ * @POSICAO-CURSOR = 5897; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {estoque, 15, 10, 7}-{contEstoque, 16, 10, 11}-{auxQntd, 18, 10, 7};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

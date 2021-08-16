@@ -65,7 +65,7 @@ public class Produto {
 	// Métodos
 	public void retirarEstoque(int qntd) {
 		if (qntd > estoque) {
-			System.out.println("VAI DÁ NAO");
+			System.out.println("QUANTIDADE INCORRETA!");
 		} else {
 			this.estoque -= qntd;
 		}
@@ -73,7 +73,7 @@ public class Produto {
 
 	public void adicionarEstoque(int qntd) {
 		if (qntd > estoque) {
-			System.out.println("VAI DÁ NAO");
+			System.out.println("QUANTIDADE INCORRETA!");
 		} else {
 			this.estoque += qntd;
 		}
