@@ -165,7 +165,7 @@ programa
 	               	{
 						se(auxCod == codigo[x])
 						{								
-							escreva("INFORME A QUANTIDADE QUE DESEJA DIMINUIR DO PRODUTO: ")
+							escreva("\nINFORME A QUANTIDADE QUE DESEJA DIMINUIR DO PRODUTO: ")
 							leia(contEstoque[x])
 							auxQntd[x]-=contEstoque[x]
 							estoque[x] = estoque[x] + contEstoque[x]
@@ -352,7 +352,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 5897; 
+ * @POSICAO-CURSOR = 4608; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {estoque, 15, 10, 7}-{contEstoque, 16, 10, 11}-{auxQntd, 18, 10, 7};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

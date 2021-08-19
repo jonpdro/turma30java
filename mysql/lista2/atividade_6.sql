@@ -1,0 +1,3 @@
+CREATE DATABASE db_construindo_a_nossa_vida;
+USE db_construindo_a_nossa_vida;
+
