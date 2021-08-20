@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `tb_usuario` (
     `nome_completo` VARCHAR(50) NOT NULL, -- nome completo do usuário/administrador
     `email` VARCHAR(50) NOT NULL, -- email do usuário/administrador
     `senha` VARCHAR(12) NOT NULL, -- senha do usuário/administrador
-    PRIMARY KEY (`id_usuario`) -- chave primária do usuário/administrador
+    PRIMARY KEY (`id_usuario`) -- chave primária do usuário
 )  ENGINE=INNODB; -- segurança da tabela
 
 CREATE TABLE IF NOT EXISTS `tb_postagem` (
