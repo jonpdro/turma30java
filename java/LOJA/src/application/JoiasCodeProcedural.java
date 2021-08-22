@@ -83,7 +83,7 @@ public class JoiasCodeProcedural {
 							linha();
 							System.out.println("\t         ✧ CARRINHO DE COMPRAS ✧");
 							linha();
-							System.out.println("CÓDIGO\t        PRODUTO\t\t   PREÇOS\t  QNTDE\n");
+							System.out.println("\tCÓDIGO\t        PRODUTO\t\t   PREÇOS\t  QNTDE\n");
 
 							for (x = 0; x < 10; x++) {
 								if (auxQntd[x] > 0) {
@@ -105,6 +105,7 @@ public class JoiasCodeProcedural {
 
 				}
 				// FUNÇÃO DE CONTINUAR COMPRANDO
+
 				System.out.println("DESEJA CONTINUAR COMPRANDO?");
 				System.out.print("\nDIGITE 'S' PARA SIM E 'N' PARA NÃO: ");
 				op = leia.next().toUpperCase().charAt(0);
