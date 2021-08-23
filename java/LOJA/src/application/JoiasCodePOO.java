@@ -56,11 +56,12 @@ public class JoiasCodePOO {
 			do {
 				leia.nextLine();
 				System.out.print("\nDIGITE O CÓDIGO DO PRODUTO: ");
-				auxCod = leia.nextLine().toUpperCase();
+				auxCod = leia.nextLine().toUpperCase();						
 
 				// LAÇO DA VALIDAÇÃO DO CÓDIGO DO PRODUTO
 				for (int x = 0; x < itens.size(); x++) {
 					pos = x;
+					
 					// LAÇO CONDICIONAL DE VALIDAÇÃO DO CÓDIGO INSERIDO
 					if (itens.get(pos).getCodigo().equals(auxCod)) {
 						System.out.print("\nCÓDIGO\tPRODUTO \tPREÇO \tESTOQUE");
