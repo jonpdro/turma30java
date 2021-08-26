@@ -12,7 +12,7 @@
 	<artifactId>blogPessoal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>blogPessoal</name>
-	<description>Projeto de Blog Pessoal em Spring.</description>
+	<description>Meu primeiro projeto em Spring Boot.</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
