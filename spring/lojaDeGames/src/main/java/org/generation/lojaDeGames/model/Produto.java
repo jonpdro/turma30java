@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -26,7 +27,7 @@ public class Produto {
 	@Size(min = 0, max = 50)
 	private String titulo;
 
-	@NotBlank
+	@NotNull
 	@Min(0)
 	private BigDecimal valor;
 
