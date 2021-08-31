@@ -16,7 +16,7 @@ public class JoiasCodePOO {
 		// LISTAS E OBJETO
 		Produto notaFiscal = new Produto();
 		ArrayList<Produto> itens = new ArrayList<>();
-		ArrayList<Produto> carrinho = new ArrayList<>();
+		ArrayList<Produto> carrinho = new ArrayList<>(); 
 
 		itens.add(new Produto("G7-01", "PULSEIRA ICY", 70.99, 10));
 		itens.add(new Produto("G7-02", "ANEL TOPÁZIO", 50.99, 10));
