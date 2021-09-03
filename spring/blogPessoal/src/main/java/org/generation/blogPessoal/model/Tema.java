@@ -9,10 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.istack.NotNull;
 
 @Entity
 @Table(name = "tb_tema")
@@ -22,12 +21,16 @@ public class Tema {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@NotNull
-	@Size(min = 5, max = 100)
+	@NotBlank
 	private String descricao;
 
+	/*
+	 * Relacionamento de Tabelas "Um para Muitos" mappedBy = Mapeando a tabela
+	 * "tema" Cascade = Se houver uma alteração na tabela tema, vai alterar em todas
+	 * as postagens
+	 */
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties("tema")
+	@JsonIgnoreProperties("tema") // -> Anotação para não ter repercursividade no HTTP
 	private List<Postagem> postagem;
 
 	public long getId() {
