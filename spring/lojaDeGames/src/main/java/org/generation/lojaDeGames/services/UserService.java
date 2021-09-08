@@ -35,7 +35,7 @@ public class UserService {
 		Optional<User> usuario = repository.findByUser(user.get().getUser());
 
 		if (usuario.isPresent()) {
-			if (encoder.matches(user.get().getSenha(), usuario.get().getUser())) {
+			if (encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
 
 				String auth = user.get().getUser() + ":" + user.get().getSenha();
 
