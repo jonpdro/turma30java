@@ -13,6 +13,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
 	// JUnity
 	public List<User> findAllByNomeContainingIgnoreCase(String nome);
+
 	// JUnity
 	public User findByNome(String nome);
 }

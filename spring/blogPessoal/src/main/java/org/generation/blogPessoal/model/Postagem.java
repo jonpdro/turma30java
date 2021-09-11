@@ -24,11 +24,11 @@ public class Postagem {
 	private long id;
 
 	@NotBlank(message = "O atributo Titulo não pode ficar vazio ou nulo.")
-	@Size(max = 50)
+	@Size(max = 50, message = "O atributo Titulo permite até 50 caracteres.")
 	private String titulo;
 
 	@NotBlank(message = "O atributo Titulo não pode ficar vazio ou nulo.")
-	@Size(min = 10, max = 255)
+	@Size(min = 10, max = 255, message = "O atributo Texto permite no mínimo 10 e no máximo 255 caracteres.")
 	private String texto;
 
 	@Temporal(TemporalType.TIMESTAMP)

@@ -11,8 +11,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -25,20 +28,21 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@NotNull(message = "O atributo Email é obrigatório.")
+	@NotBlank(message = "O atributo Nome é obrigatório.")
 	private String nome;
 
-	@NotNull(message = "O atributo Email é obrigatório.")
+	@NotBlank(message = "O atributo Username é obrigatório.")
 	@Size(max = 25, message = "O username deve ter no máximo 25 caracteres.")
+	@Column(unique = true)
 	private String username;
 
-	@NotNull(message = "O atributo Senha é obrigatória.")
+	@NotBlank(message = "O atributo Senha é obrigatória.")
 	@Size(min = 6, message = "A senha deve ter no mínimo 6 caracteres.")
 	private String senha;
 
-	@Column(name = "data_nascimento")
-	@NotNull(message = "O atributo Data de Nascimento é obrigatório.")
-	@JsonFormat(pattern = "dd-MM-yyyy")
+	@NotNull(message = "O atributo Data de Nascimento é obrigatório e o formato deve ser 'yyyy-MM-dd'.")
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate dataNascimento;
 
 	@OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
