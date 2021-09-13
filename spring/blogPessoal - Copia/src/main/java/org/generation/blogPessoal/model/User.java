@@ -37,7 +37,7 @@ public class User {
 	private String username;
 
 	@NotBlank(message = "O atributo Senha é obrigatória.")
-	@Size(min = 6, message = "A senha deve ter no mínimo 6 caracteres.")
+	@Size(min = 8, message = "A senha deve ter no mínimo 6 caracteres.")
 	private String senha;
 
 	@NotNull(message = "O atributo Data de Nascimento é obrigatório e o formato deve ser 'yyyy-MM-dd'.")
