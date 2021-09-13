@@ -49,22 +49,10 @@ public class UserTest {
 	@DisplayName("✖ Não Valida Atributos Nulos")
 	void testNaoValidaAtributos() {
 		Set<ConstraintViolation<User>> violacao = validator.validate(usuarioNulo);
-		
+
 		System.out.println(violacao.toString());
-		
+
 		assertTrue(violacao.isEmpty());
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

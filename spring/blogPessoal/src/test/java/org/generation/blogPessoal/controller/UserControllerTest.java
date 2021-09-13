@@ -2,12 +2,13 @@ package org.generation.blogPessoal.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import org.generation.blogPessoal.model.User;
 import org.generation.blogPessoal.repository.UserRepository;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -36,30 +37,30 @@ public class UserControllerTest {
 	private User usuarioAdmin;
 
 	@Autowired
-	private UserRepository usuarioRepository;
+	private UserRepository repository;
 
-	@BeforeAll
-	public void start() {
-		LocalDate dataAdmin = LocalDate.parse("2000-01-27", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-		usuario = new User(0L, "Administrador", "admin", "123456", dataAdmin);
+	@BeforeEach
+	public void start() throws ParseException {
+		LocalDate data = LocalDate.parse("2003-01-27", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+		usuarioAdmin = new User(0L, "Administrador", "admin", "123456", data);
 
-		if (!usuarioRepository.findByUsername(usuarioAdmin.getUsername()).isPresent()) {
-			HttpEntity<User> request = new HttpEntity<User>(usuarioAdmin);
-			testRestTemplate.exchange("/usuarios/cadastrar", HttpMethod.POST, request, User.class);
+		if (!repository.findByUsername(usuarioAdmin.getUsername()).isPresent()) {			
+			 HttpEntity<User> request = new HttpEntity<User>(usuarioAdmin);
+				testRestTemplate.exchange("/usuarios/cadastrar", HttpMethod.POST, request, User.class);
 		}
 
 		LocalDate dataPost = LocalDate.parse("2000-01-29", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 		usuario = new User(0L, "João Pedro Cruz", "jotinha", "123456", dataPost);
 
 		LocalDate dataPut = LocalDate.parse("2000-02-06", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-		usuario = new User(2L, "João Pedro Cruz", "jotaskrt", "jota123", dataPut);
+		usuarioUpdate = new User(2L, "João Pedro Cruz Gomes", "jotinha1", "1234567", dataPut);
 
 	}
 
 	@Test
 	@Order(1)
 	@DisplayName("✔ Cadastrar Usuário!")
-	public void deveRealizarPostUsuario() {
+	void deveRealizarPostUsuario() {
 		HttpEntity<User> request = new HttpEntity<User>(usuario);
 
 		ResponseEntity<User> resposta = testRestTemplate.exchange("/usuarios/cadastrar", HttpMethod.POST, request,

@@ -43,7 +43,7 @@ public class UserController {
 	}
 
 	@PutMapping("/atualizar")
-	public ResponseEntity<User> putUsuario(@RequestBody User usuario) {
+	public ResponseEntity<User> put(@RequestBody User usuario) {
 		return service.atualizarUsuario(usuario).map(resp -> ResponseEntity.status(HttpStatus.OK).body(resp))
 				.orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
 	}
