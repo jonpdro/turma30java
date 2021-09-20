@@ -1,0 +1,72 @@
+header {
+  padding-top: 10px;
+  font-size: 30px;
+  letter-spacing: 1.4px;
+  text-shadow: 4px 4px black;
+  color: white;
+}
+
+body {
+  background: url("../img/fundo.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.op {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.box {
+  border-style: outset;
+  background-color: rgb(104, 153, 185, 0.9);
+}
+
+.container {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+.txt {
+  color: white;
+  text-shadow: 2px 2px black;
+  font-size: 15px;
+  text-indent: 50px;
+  padding: 0px 30px;
+}
+
+.end {
+  color: rgb(32, 81, 114);
+  text-shadow: 2px 2px rgb(129, 175, 228);
+  font-size: 20px;
+}
+
+.fonts {
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.menu li {
+  display: inline;
+  padding: 15px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+}
+
+h1 {
+  color: rgb(32, 81, 114);
+  text-shadow: 2px 2px rgb(199, 192, 192);
+}
