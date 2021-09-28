@@ -1,3 +1,37 @@
-.fs-16 {
-    font-size: 16pt;
+.favicon {
+    width: 60px;
+    height: auto;
+}
+
+.bg {
+    background-color: #79B4B7;
+}
+
+.icon {
+    color: white;
+}
+
+.form-control {
+    border-radius: 4.25rem;
+}
+
+.search .form-control {
+    padding-left: 2.375rem;
+}
+
+.search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.icon li {
+    font-size: 30px;
+    padding-left: 20px;
 }

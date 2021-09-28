@@ -3,11 +3,12 @@
 }
 
 .icon {
-    font-size: 48pt;
+    font-size: 42pt;
 }
 
 a {
     text-decoration: none;
+    display: inline;
 }
 
 .myform {
@@ -18,7 +19,7 @@ a {
     flex-direction: column;
     width: 100%;
     pointer-events: auto;
-    background-color: #fff;
+    background-color: #79B4B7;
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 1.1rem;
@@ -27,5 +28,19 @@ a {
 }
 
 .mybtn {
-    border-radius: 50px;
+    border-radius: 18px;
+    background-color: #FEFBF3;
+    color: #33858a;
+}
+
+.tr-y {
+    transition: transform 200ms;
+}
+
+.tr-y:hover {
+    transform: translateY(-3px);
+}
+
+.ctnr {
+    margin-top: 1.6em;
 }
