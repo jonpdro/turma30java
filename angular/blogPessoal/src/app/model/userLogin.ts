@@ -1,14 +1,10 @@
-import { Postagem } from './postagem';
-
-export class User {
+export class UserLogin {
     public id: number
     public nome: string
     public username: string
     public email: string
     public senha: string
-    public dataNascimento: Date
+    public token: string
     public fotoPerfil: string
-    public fotoCapa: string
     public admin: string
-    public postagem: Postagem[]
 }
