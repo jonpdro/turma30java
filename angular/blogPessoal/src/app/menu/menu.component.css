@@ -13,6 +13,8 @@
 
 .form-control {
     border-radius: 4.25rem;
+    /* min-width: 23rem; */
+    width: 20.5rem;
 }
 
 .search .form-control {
