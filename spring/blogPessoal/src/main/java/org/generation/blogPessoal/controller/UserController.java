@@ -30,7 +30,7 @@ public class UserController {
 		return ResponseEntity.ok(service.listarUsuarios());
 	}
 
-	@PostMapping("/logar")
+	@PostMapping("/entrar")
 	public ResponseEntity<UserLogin> logar(@RequestBody Optional<UserLogin> usuario) {
 		return service.Logar(usuario).map(resp -> ResponseEntity.status(HttpStatus.OK).body(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());

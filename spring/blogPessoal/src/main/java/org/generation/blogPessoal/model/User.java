@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tb_user")
+@Table(name = "tb_usuarios")
 public class User {
 
 	@Id
@@ -49,6 +49,12 @@ public class User {
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate dataNascimento;
+
+	private String fotoPerfil;
+
+	private String fotoCapa;
+
+	private String admin;
 
 	@OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("user")
@@ -122,4 +128,27 @@ public class User {
 		this.postagem = postagem;
 	}
 
+	public String getFotoPerfil() {
+		return fotoPerfil;
+	}
+
+	public void setFotoPerfil(String fotoPerfil) {
+		this.fotoPerfil = fotoPerfil;
+	}
+
+	public String getFotoCapa() {
+		return fotoCapa;
+	}
+
+	public void setFotoCapa(String fotoCapa) {
+		this.fotoCapa = fotoCapa;
+	}
+
+	public String getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(String admin) {
+		this.admin = admin;
+	}
 }

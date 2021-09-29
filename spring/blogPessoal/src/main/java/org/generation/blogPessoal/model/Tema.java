@@ -15,16 +15,16 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tb_tema")
+@Table(name = "tb_temas")
 public class Tema {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
-	@NotBlank(message = "O atributo Descrição é obrigatório.")
-	@Size(max = 255, message = "O atributo Descrição permite somente até 255 caracteres.")
-	private String descricao;
+	@NotBlank(message = "O atributo Titulo é obrigatório.")
+	@Size(max = 50, message = "O atributo Titulo permite somente até 50 caracteres.")
+	private String titulo;
 
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("tema")
@@ -38,12 +38,12 @@ public class Tema {
 		this.id = id;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getTitulo() {
+		return titulo;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 
 	public List<Postagem> getPostagem() {

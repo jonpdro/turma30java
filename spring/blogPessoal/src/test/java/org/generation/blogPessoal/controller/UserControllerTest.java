@@ -44,7 +44,7 @@ public class UserControllerTest {
 		LocalDate data = LocalDate.parse("2003-01-27", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 		usuarioAdmin = new User(0L, "Administrador", "admin", "123456", data);
 
-		if (!repository.findByUsername(usuarioAdmin.getUsername()).isPresent()) {			
+		if (!repository.findByUsernameIgnoreCase(usuarioAdmin.getUsername()).isPresent()) {			
 			 HttpEntity<User> request = new HttpEntity<User>(usuarioAdmin);
 				testRestTemplate.exchange("/usuarios/cadastrar", HttpMethod.POST, request, User.class);
 		}
