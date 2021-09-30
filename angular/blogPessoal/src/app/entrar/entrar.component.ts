@@ -31,6 +31,7 @@ export class EntrarComponent implements OnInit {
       environment.token = this.userLogin.token
       environment.email = this.userLogin.email
       environment.admin = this.userLogin.admin
+      environment.fotoPerfil = this.userLogin.fotoPerfil
 
       this.router.navigate(['/home'])
     }, erro =>{

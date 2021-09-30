@@ -1,6 +1,7 @@
 .favicon {
     width: 60px;
-    height: auto;
+    height: 60px;
+    border-radius: 150px;
 }
 
 .bg {
