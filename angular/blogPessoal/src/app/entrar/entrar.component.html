@@ -16,18 +16,26 @@
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
-                      <i class="fa fa-at" aria-hidden="true"></i>
+                      <i class="fa fa-at fa-size" aria-hidden="true"></i>
                     </div>
                   </div>
-                  <input type="text" name="username" class="form-control" id="username" placeholder="Usuario">
+                  <input [(ngModel)]='userLogin.username' type="text" name="username" class="form-control" id="username"
+                    placeholder="Usuario">
                 </div>
               </div>
+
               <div class="form-group">
-                <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha">
-                <small class="text-center pt-2"><a routerLink="" class="text-white" id="signup">Esqueceu a
-                    senha?</a></small>
-                
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fa fa-lock fa-size" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <input [(ngModel)]='userLogin.senha' type="password" name="senha" id="senha" class="form-control"
+                    placeholder="Senha">
+                </div>
               </div>
+
               <div class="col">
                 <div class="row d-flex align-items-center">
                   <div class="col-md-auto">
@@ -35,10 +43,11 @@
                         conta</a></p>
                   </div>
                   <div class="col-md-auto ml-auto">
-                    <button type="submit" class="btn mybtn tr-y">Entrar</button>
+                    <button type="submit" class="btn mybtn tr-y" (click)='entrar()'>Entrar</button>
                   </div>
                 </div>
               </div>
+
             </form>
           </div>
         </div>

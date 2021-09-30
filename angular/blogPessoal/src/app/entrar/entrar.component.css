@@ -45,3 +45,8 @@ a {
 .ctnr {
     margin-top: 9em;
 }
+
+.fa-size {
+    font-size: 16pt;
+    display: flex;
+}

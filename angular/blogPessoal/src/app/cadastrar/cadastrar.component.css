@@ -11,6 +11,11 @@ a {
     display: inline;
 }
 
+.fa-size {
+    font-size: 16pt;
+    display: flex;
+}
+
 .myform {
     position: relative;
     display: -ms-flexbox;
