@@ -8,18 +8,39 @@
     background-color: #79B4B7;
 }
 
-.icon {
+.icon li button {
+    font-size: 30px;
+    padding: 0px;
+    margin: 0px;
     color: white;
 }
 
-.form-control {
-    border-radius: 4.25rem;
-    /* min-width: 23rem; */
-    width: 20.5rem;
+.ani {
+    transition: 250ms;
+}
+
+.ani:hover {
+    transform: scale(1.11);
+}
+
+.ani2 {
+    transition: 1.5s;
+}
+
+.ani2:hover {
+    transform: rotate(360deg);
 }
 
 .search .form-control {
     padding-left: 2.375rem;
+    border-radius: 4.25rem;
+    width: 17em;
+    transition: 690ms;
+}
+
+.search .form-control:hover {
+    width: 20em;
+    transform: scaleX(1);
 }
 
 .search .form-control-feedback {
@@ -37,4 +58,29 @@
 .icon li {
     font-size: 30px;
     padding-left: 20px;
+    color: white;
+}
+
+.mybtn {
+    border-radius: 18px;
+    background-color: #FEFBF3;
+    color: #33858a;
+}
+
+.mymodal {
+    border-radius: 1.1rem;
+    border: none;
+    background-color: #9ec0c2;
+}
+
+.mymodal .form-group .form-control {
+    border-radius: 10px;
+    border: none;
+    outline: 0;
+}
+
+.close {
+    border-style: none;
+    border: none;
+    outline: 0;
 }
