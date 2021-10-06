@@ -23,7 +23,7 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col-md-12">
-      <h2 class="text-center text-secondary">Todos os temas</h2>
+      <h2 class="text-center text-secondary">Lista dos Temas</h2>
     </div>
   </div>
 
@@ -42,8 +42,8 @@
             <th>{{ tema.id }}</th>
             <td>{{ tema.titulo }}</td>
             <td class="d-flex justify-content-end">
-              <button class="btn btn-info mr-3">Editar</button>
-              <button class="btn btn-danger">Apagar</button>
+              <button class="btn btn-info mr-3" [routerLink]="['/tema-edit', tema.id]">Editar</button>
+              <button class="btn btn-danger" [routerLink]="['/tema-delete', tema.id]">Apagar</button>
             </td>
           </tr>
         </tbody>
