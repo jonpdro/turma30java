@@ -1,11 +1,11 @@
-import { TemaService } from './../service/tema.service';
+import { User } from './../model/user';
+import { TemaService } from 'src/app/service/tema.service';
 import { Postagem } from './../model/postagem';
 import { environment } from 'src/environments/environment.prod';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { PostagemService } from '../service/postagem.service';
 import { Tema } from '../model/tema';
-import { User } from '../model/user';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -16,15 +16,13 @@ import { AuthService } from '../service/auth.service';
 export class MenuComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
-  listaPostagens: Postagem[]
 
-
-  listaTemas: Tema[]
+  tema: Tema
+  listarTemas: Tema[]
   idTema: number
-  tema: Tema = new Tema()
 
-  foto = environment.fotoPerfil
   user: User = new User()
+  fotoUser = environment.fotoPerfil
   idUser = environment.id
 
 
@@ -36,20 +34,22 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0, 0)
-
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }
 
     this.getAllTemas()
-    this.getAllPostagens()
-
   }
 
-  getAllPostagens() {
-    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
-      this.listaPostagens = resp
+  getAllTemas() {
+    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
+      this.listarTemas = resp
+    })
+  }
+
+  findByIdTema() {
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
+      this.tema = resp
     })
   }
 
@@ -62,22 +62,10 @@ export class MenuComponent implements OnInit {
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
+      alert('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
-      alert('Sua postagem feita!')
-      this.getAllPostagens()
     })
-  }
-
-  getAllTemas() {
-    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
-      this.listaTemas = resp
-    })
-  }
-
-  findByIdTema() {
-    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
-      this.tema = resp
-    })
+    
   }
 
   sair() {

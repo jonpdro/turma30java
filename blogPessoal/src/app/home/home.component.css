@@ -1,3 +1,8 @@
 .bg-1 {
-    background-color: #79b4b771;
+    background-color: #79b4b710;
+}
+
+.fs-11 {
+    margin-top: 1.5px;
+    font-size: 11pt;
 }

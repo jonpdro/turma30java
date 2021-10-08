@@ -1,12 +1,11 @@
-import { TemaService } from 'src/app/service/tema.service';
+import { Tema } from './../model/tema';
+import { User } from './../model/user';
+import { AuthService } from './../service/auth.service';
+import { PostagemService } from './../service/postagem.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/postagem';
-import { AuthService } from '../service/auth.service';
-import { User } from '../model/user';
-import { PostagemService } from '../service/postagem.service';
-import { Tema } from '../model/tema';
 
 @Component({
   selector: 'app-home',
@@ -16,21 +15,21 @@ import { Tema } from '../model/tema';
 export class HomeComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
-  tema: Tema = new Tema()
-  user: User = new User()
+  listarPostagem: Postagem[]
 
-  listaPostagens: Postagem[]
+  user: User = new User()
+  idUser = environment.id
+
+  tema: Tema = new Tema()
+  listarTemas: Tema[]
 
   constructor(
     private router: Router,
-    private authService: AuthService,
     private postagemService: PostagemService,
-    private temaService: TemaService
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
-    window.scroll(0, 0)
-
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }
@@ -38,9 +37,17 @@ export class HomeComponent implements OnInit {
     this.getAllPostagens()
   }
 
-  getAllPostagens() {
-    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
-      this.listaPostagens = resp
+  findByIdUser() {
+    this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
+      this.user = resp
     })
   }
+
+  getAllPostagens() {
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
+      this.listarPostagem = resp
+    })
+  }
+
+
 }

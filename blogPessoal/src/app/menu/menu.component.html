@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-light bg">
-    <img src="{{foto}}" class="d-inline-block align-top favicon" alt="Icon do User">
+    <img src="{{ fotoUser }}" class="d-inline-block align-top favicon" alt="Icon do User">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
         aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -89,16 +89,15 @@
                     <label class="text-secondary font-weight-bold">Escolha um tema:
                     </label>
                     <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
-                        <option *ngFor='let item of listaTemas' value="{{item.id}}">
-                            {{item.titulo}}
+                        <option *ngFor='let item of listarTemas' value="{{ item.id }}">
+                            {{ item.titulo }}
                         </option>
                     </select>
                 </div>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn mybtn ani text-secondary" (click)='publicar()'
-                    data-dismiss="modal">Publicar</button>
+                <button (click)='publicar()' type="button" class="btn mybtn ani text-secondary" data-dismiss="modal">Publicar</button>
             </div>
         </div>
     </div>
