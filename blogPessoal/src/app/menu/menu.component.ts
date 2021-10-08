@@ -16,6 +16,8 @@ import { AuthService } from '../service/auth.service';
 export class MenuComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
+  listaPostagens: Postagem[]
+
 
   listaTemas: Tema[]
   idTema: number
@@ -34,13 +36,21 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
 
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
     }
 
     this.getAllTemas()
+    this.getAllPostagens()
+
+  }
+
+  getAllPostagens() {
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp
+    })
   }
 
   publicar() {
@@ -54,6 +64,7 @@ export class MenuComponent implements OnInit {
       this.postagem = resp
       this.postagem = new Postagem()
       alert('Sua postagem feita!')
+      this.getAllPostagens()
     })
   }
 
