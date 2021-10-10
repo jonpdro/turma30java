@@ -1,4 +1,5 @@
 import { Tema } from './../model/tema';
+import { TemaService } from './../service/tema.service';
 import { User } from './../model/user';
 import { AuthService } from './../service/auth.service';
 import { PostagemService } from './../service/postagem.service';
@@ -20,13 +21,15 @@ export class HomeComponent implements OnInit {
   user: User = new User()
   idUser = environment.id
 
-  tema: Tema = new Tema()
+  tema: Tema
   listarTemas: Tema[]
+  idTema: number
 
   constructor(
     private router: Router,
     private postagemService: PostagemService,
-    private authService: AuthService
+    private temaService: TemaService,
+    public authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -40,6 +43,12 @@ export class HomeComponent implements OnInit {
   findByIdUser() {
     this.authService.getByIdUser(this.idUser).subscribe((resp: User) => {
       this.user = resp
+    })
+  }
+
+  findByIdTema() {
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
+      this.tema = resp
     })
   }
 

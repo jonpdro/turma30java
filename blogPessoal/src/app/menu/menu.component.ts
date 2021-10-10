@@ -16,6 +16,7 @@ import { AuthService } from '../service/auth.service';
 export class MenuComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
+  listarPostagem: Postagem[]
 
   tema: Tema
   listarTemas: Tema[]
@@ -38,7 +39,14 @@ export class MenuComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
+    this.getAllPostagens()
     this.getAllTemas()
+  }
+
+  getAllPostagens() {
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
+      this.listarPostagem = resp
+    })
   }
 
   getAllTemas() {
