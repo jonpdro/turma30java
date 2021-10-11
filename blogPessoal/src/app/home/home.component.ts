@@ -17,13 +17,18 @@ export class HomeComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listarPostagem: Postagem[]
+  tituloPost: string
 
   user: User = new User()
   idUser = environment.id
 
   tema: Tema
-  listarTemas: Tema[]
+  listarTema: Tema[]
   idTema: number
+  nomeTema: string
+
+  key = 'data'
+  reverse = true
 
   constructor(
     private router: Router,
@@ -39,7 +44,20 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
 
+    this.getAllTemas()
     this.getAllPostagens()
+  }
+
+  getAllPostagens() {
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
+      this.listarPostagem = resp
+    })
+  }
+
+  getAllTemas() {
+    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
+      this.listarTema = resp
+    })
   }
 
   findByIdUser() {
@@ -54,11 +72,24 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  getAllPostagens() {
-    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
-      this.listarPostagem = resp
-    })
+  findByTituloPostagem() {
+    if (this.tituloPost == '') {
+      this.getAllPostagens()
+    } else {
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
+        this.listarPostagem = resp
+      })
+    }
   }
 
+  findByNomeTema() {
+    if (this.nomeTema == '') {
+      this.getAllTemas()
+    } else {
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[]) => {
+        this.listarTema = resp
+      })
+    }
+  }
 
 }

@@ -42,7 +42,7 @@ export class CadastrarComponent implements OnInit {
     }
 
     if (this.user.senha != this.confirmarSenha) {
-      this.alert.showAlertWarning('As senhas estão incorretas!')
+      this.alert.showAlertDanger('As senhas estão incorretas!')
     } else {
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
         this.user = resp
