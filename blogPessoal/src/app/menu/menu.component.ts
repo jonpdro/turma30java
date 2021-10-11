@@ -70,12 +70,15 @@ export class MenuComponent implements OnInit {
     this.user.id = this.idUser
     this.postagem.user = this.user
 
+    let novaRota = '/home'
+
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
       this.alertas.showAlertSucess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
+      this.router.navigate(['/']).then(() => { this.router.navigate([novaRota]); })
     })
-    
+
   }
 
   sair() {
