@@ -1,3 +1,4 @@
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
@@ -16,6 +17,7 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,15 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component';
     TemaDeleteComponent,
     PostagemDeleteComponent,
     PostagemEditComponent,
-    UserEditComponent
+    UserEditComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

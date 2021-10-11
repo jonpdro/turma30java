@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 import { PostagemService } from '../service/postagem.service';
 import { Tema } from '../model/tema';
 import { AuthService } from '../service/auth.service';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-menu',
@@ -31,7 +32,8 @@ export class MenuComponent implements OnInit {
     private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    public authService: AuthService
+    public authService: AuthService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -70,7 +72,7 @@ export class MenuComponent implements OnInit {
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
-      alert('Postagem realizada com sucesso!')
+      this.alertas.showAlertSucess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
     })
     
